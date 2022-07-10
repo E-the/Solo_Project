@@ -1,0 +1,625 @@
+{%  extends 'index.html' %}
+{% load static %}
+{% block title %}
+<title>Home</title>
+
+{% endblock title %}
+{% block content %}
+
+
+
+<div class="hero_area">
+    <div class="hero_social">
+      <a href="">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+      </a>
+      <a href="">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+    </div>
+    <!-- header section strats -->
+    
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container-fluid ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Smart Watches
+                    </h1>
+                    <p>
+                      Powerful features to help keep you connected, active, healthy, and safe. Advanced sensors to track all the ways you move and to measure your favorite workouts.                     </p>
+                    <div class="btn-box">
+                      <a href="/product" class="btn1">
+                        Shop Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="/static/images/a.png" style="height: auto;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container-fluid ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Smart Watches
+                    </h1>
+                    <p>
+                      Smartwatches can do many things that your smartphone can't. Benefits include tracking your heart rate, sleep, activity and overall fitness level. You can also play music and do phone free activities and even pay at the store.                    </p>
+                    <div class="btn-box">
+                      <a href="/product" class="btn1">
+                        Shop Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'images/b.png' %}" style="height: auto;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container-fluid ">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="detail-box">
+                    <h1>
+                      Smart Watches
+                    </h1>
+                    <p>
+                      Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
+                    </p>
+                    <div class="btn-box">
+                      <a href="/product" class="btn1">
+                        Shop Now
+                      </a> 
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{% static 'images/3.png' %}" style="height: auto;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+        </ol>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  {% include 'top.html' %}
+
+  <section class="shop_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Latest Watches
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6 " data-aos="fade-right">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/sf1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Apple watch
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    $300
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  Featured
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3" data-aos="fade-left">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/w2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Smartwatch
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    $125
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3" data-aos="fade-left">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/w3.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Smartwatch
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    $110
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3" data-aos="fade-right">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/w4.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Smartwatch
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    $145
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3" data-aos="fade-right">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/w5.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Smartwatch
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    $195
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6  col-xl-3" data-aos="fade-left">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/w6.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Smartwatch
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    $170
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3" data-aos="fade-left">
+          <div class="box">
+            <a href="">
+              <div class="img-box">
+                <img src="images/w1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Smartwatch
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    $230
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="/product">
+          View All
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end shop section -->
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6 col-lg-5 ">
+          <div class="img-box">
+            <img src="../static/images/about-img.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-7" data-aos="fade-right">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About Us
+              </h2>
+            </div>
+            <p>
+              Smart Watch can open up a whole new world for older family members. They get the same connectivity benefits of Apple Watch, like calling, texting, and location sharing to stay close to the family. And if they need it, they can make the text larger or bolded.Unusually high or low heart rates and irregular heart rhythms (known as arrhythmias) could be signs of a serious condition.3 But many people don't recognize the symptoms, so the underlying causes often go undiagnosed. Notifications in the Heart Rate app will alert you to these irregularities so you can take action and consult your doctor.
+            </p>
+            <a href="/about">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- feature section -->
+
+  <section class="feature_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Features Of Our Watches
+        </h2>
+        <p>
+          Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+      <div class="row"> 
+        <div class="col-sm-6 col-lg-3" data-aos="fade-right">
+          <div class="box">
+            <div class="img-box">
+              <img src="../static/images/f1.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Fitness Tracking
+              </h5>
+              <p>
+                Get a run in wherever you are with great playlists, coaching, and photos from iconic locations. All on Smart Watch.
+              </p>
+              <a href="">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-right">
+          <div class="box">
+            <div class="img-box">
+              <img src="../static/images/f2.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Alerts & Notifications
+              </h5>
+              <p>
+                You'll start receiving a pop-up message on your Smartwatch, alerting you each time a participant signs a smart waiver.
+              </p>
+              <a href="">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-left">
+          <div class="box">
+            <div class="img-box">
+              <img src="../static/images/f3.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Messages
+              </h5>
+              <p>
+                The best smartwatch that supports text and talk with wireless Qi charging and decent multi-day battery life makes this a smart choice.
+              </p>
+              <a href="">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-left">
+          <div class="box">
+            <div class="img-box">
+              <img src="../static/images//f4.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Bluetooth
+              </h5>
+              <p>
+                Just as with your smartphone, Internet access enables a smart watch with whole world of potential capabilities
+              </p>
+              <a href="">
+                <span>
+                  Read More
+                </span>
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="features.html">
+          View More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end feature section -->
+
+    <!-- why us section -->
+
+    <section class="why_us_section layout_padding">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2>
+            Why Choose Us
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="../static/images/r1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Fast Delivery
+                </h5>
+                <p>
+                  variations of passages of Lorem Ipsum available
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="../static/images/r2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Free Shiping
+                </h5>
+                <p>
+                  variations of passages of Lorem Ipsum available
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="../static/images/r3.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Best Quality
+                </h5>
+                <p>
+                  variations of passages of Lorem Ipsum available
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end why us section -->
+
+  <!-- contact section -->
+
+  <section class="contact_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <div class="heading_container">
+              <h2>
+                Contact Us
+              </h2>
+            </div>
+            <form action="">
+              <div>
+                <input id="name" type="text" placeholder="Full Name " />
+              </div>
+              <div>
+                <input id="email" type="email" placeholder="Email" />
+              </div>
+              <div>
+                <input id="number" type="number" placeholder="Phone number" />
+              </div>
+              <div>
+                <input id="text" type="text" class="message-box" placeholder="Message" />
+              </div>
+              <div class="d-flex ">
+                <button id="btn">
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6"  data-aos="fade-in">
+          <div class="img-box">
+            <img src="../static/images/contact-img.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+  <!-- client section -->
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Testimonial
+        </h2>
+      </div>
+      <div class="carousel-wrap ">
+        <div class="owl-carousel client_owl-carousel">
+          <div class="item">
+            <div class="box"  data-aos="flip-right">
+              <div class="img-box">
+                <img src="images/adip.png" alt="">
+              </div>
+              <div class="detail-box">
+                <div class="client_info">
+                  <div class="client_name">
+                    <h5>
+                      Always Shrestha
+                    </h5>
+                    <h6>
+                      Premium
+                    </h6>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Smartwatch 18-hour battery life claim is an estimate. It charges quickly, so you can put it on the charger for 10 minutes before bed and that should be enough juice to track your sleep. Then when you are getting ready in the morning, put it back on the charger. That is my recommended charging schedule for this wearable. 
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box" data-aos="flip-left">
+              <div class="img-box">
+                <img src="images/always.png" alt="">
+              </div>
+              <div class="detail-box">
+                <div class="client_info">
+                  <div class="client_name">
+                    <h5>
+                      Cristiano Ronaldo
+                    </h5>
+                    <h6>
+                      Customer
+                    </h6>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Not water proof, but water resistant. I’ve forgotten to take my series 6 watch off in the shower, and there is a feature that will vibrate the watch to help expel any water that did get inside.
+                  My watch has been fine with some water. Even though it would probably be fine to swim with, I don’t think I would try testing it that much.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end client section -->
+
+
+  {% endblock content %}
+

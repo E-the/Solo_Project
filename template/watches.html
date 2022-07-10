@@ -1,0 +1,85 @@
+
+{%  extends 'index.html' %}
+{% load static %}
+{% block title %}
+<title>Watches</title>
+
+{% endblock title %}
+
+{% block content %}
+<section class="shop_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Latest Watches
+        </h2>
+      </div>
+      <div class="row" >
+        <div class="col-md-6 " data-aos="fade-up">
+          <div class="box">
+            <a href="">
+              
+              <div class="img-box">
+                <img src="../static/images/sf1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Apple X Nike Watch
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    Start At $444 
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  Featured
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% for product in products %}
+        <div class="col-sm-6 col-xl-3" data-aos="fade-up">
+            <div class="box">
+              <div class="img-box">
+                <img src="/{{product.watch_image}}" alt="">
+                <!-- <a href="product/single-product.html" class="add_cart_btn">
+                  <span>
+                    View Deatils
+                  </span>
+                </a> -->
+                <a href="/product/product/{{product.id}}" class="add_cart_btn">
+                    <span>
+                      VIEW DETAIL
+                    </span>
+                  </a>
+              </div>
+              <div class="detail-box">
+                <h6>
+                    {{product.watch_name}}
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    {{product.watch_price}}
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+</head>
+<style>
+    body{
+        background-color: white;
+    }
+    h1{
+        text-transform: uppercase;
+    }
+    .input-box{ 
+    width: 20%;
+	height: 32px;
+	padding: 0 10px;
+    font-size: 13px; 
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(31, 29, 29);	
+}
+.input-box:focus{
+    outline: none;
+}
+
+.far{
+    cursor: pointer;
+    font-size: 10px;
+    margin-top: 27px;
+    margin-right: -11px;
+} 
+.far:hover{
+    opacity: 0.8;
+}
+
+
+p{
+    margin-left: 200px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+p:hover{
+    opacity: 0.7;
+}
+.but {
+    font-size: 14px;
+    padding: 10px 90px;
+    outline: transparent;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    cursor: pointer;
+    font-stretch: condensed;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    background-image: linear-gradient(to right, transparent 50%, #fff 50%);
+    background-size: 200%;
+    background-position: 0%;
+    transition: 250ms ease;
+}
+
+.but:hover {
+    
+    border: none;
+    color: #121212;
+    background-position: 100%;
+    
+}
+
+</style>
+<body>
+
+    <h1>Update</h1>
+    
+    <form action="/update/{{data.id}}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="text" class="input-box" placeholder="Watch" name="watch"  value="{{data.watch}}" required />
+        <br>
+		<input type="text" class="input-box" placeholder="Price"  name="price" value="{{data.price}}" required/>
+        
+        <br>
+        <input type="text" class="input-box" placeholder="Detail"  name="detail" value="{{data.detail}}" required/>
+
+        <br>
+        <input type="file" name="user_image" />
+
+        <br>
+        <br>
+        <input type="submit" value="Update" class="but">
+
+    </form>
+    <img width="100px" src="/{{data.user_image}}" alt="" srcset="">
+
+    
+    
+
+        
+
+    
+</body>
+</html>

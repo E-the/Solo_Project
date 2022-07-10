@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    {% load static %}
+    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- linking css,js and fonts -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.scss' %}">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  	<link rel="stylesheet" type="text/css" href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<!--  end linking css,js and fonts -->
+</head>
+
+
+<body> 
+        <div class="d-lg-flex half">
+          <div class="bg order-1 order-md-2" style="background-image: url('../../static/images/1.jpg');"></div>
+          <div class="contents order-2 order-md-1">
+      
+            <div class="container">
+              
+              <div class="row align-items-center justify-content-center">
+                <div class="col-md-7">
+                  <h3>Login to <strong>samaya.com</strong></h3>
+                  <p class="mb-4">Top of the list of advantages of LogIn is the low financial cost</p>
+                  
+                  <form action="" method="POST" >
+                    {% csrf_token %}
+                    <div class="form-group first">
+                      <label for="username">Username</label>
+                      <input type="text" class="form-control" placeholder="your-username" id="username" name="username" required />
+                    </div>
+                    <div class="form-group last mb-3">
+                      <label for="password">Password</label>
+      
+                      <input type="password" class="form-control" placeholder="your-password" id="id_password" name="password"  required/>
+                      <i class="far fa-eye" id="togglePassword"></i>
+      
+                    </div>
+                    
+                    <div class="d-flex mb-5 align-items-center">
+                      <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                        <input type="checkbox" checked="checked"/>
+                        <div class="control__indicator"></div>
+                      </label>
+                      <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+                    </div>
+      
+                    <input type="submit" value="LOG IN" class="btn btn-block btn-primary"id="register">                     <br>
+                    <p>New Here? <a href="/user/register" style="text-decoration: none;"><strong >REGISTER</strong></a></p>
+      
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end content part -->
+
+       <script src="{% static 'js/login.js' %}"></script>
+
+      </body>
+</html>
+

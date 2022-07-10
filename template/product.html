@@ -1,0 +1,110 @@
+{%  extends 'pro.html' %}
+
+
+
+{% load static %}
+{% block content %}
+<form action="/update/{{data.id}}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<!-- Page Content -->
+    <!-- Single Starts Here -->
+    <div class="single-product">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="section-heading">
+                <div class="line-dec" style="background-color: #dc3545;"></div>
+                <h1>{{data.watch_name}}</h1>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="product-slider">            
+                  <ul class="slides">
+                    <li>
+                      <img src="/{{data.watch_image}}" id="image" style="height: 500px;"/>
+                    </li>
+                    <!-- items mirrored twice, total of 12 -->
+                  </ul> 
+                  <br>
+                  <br>
+                               
+                <div class="col-md-2 product-small pl-10 d-flex flex-md-row justify-content-start order-md-first" style="cursor: pointer;">
+        
+                    <img class="img-fluid smallimg" src="/{{data.watch_image}}" alt="" />
+        
+                    <img class="img-fluid smallimg" src="/{{data.watch_image2}}" alt="" style="margin-left: 50px;"/>
+        
+                    <img class="img-fluid smallimg" src="/{{data.watch_image3}}" alt="" style="margin-left: 50px;"/>
+        
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="right-content">
+                <h4>{{data.watch_name}}</h4>
+                <h6>{{data.watch_price}}</h6>
+                <span class="text-secondary text-small">Details :</span>
+                <p>{{data.watch_detail}}</p>
+
+              <div id="accordion">
+                <div class="card">
+                  <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                      Water Resistant
+                      <i class="fa fa-minus" aria-hidden="true"></i>
+                    </a>
+                  </div>
+
+                  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+
+                    <div class="card-body">
+
+                      {{data.watch_tec}}
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+              <br>
+             
+                <span>{{data.watch_stock}} left on stock</span>
+                <form action="" method="get">
+                  <label for="quantity">Quantity:</label>
+                  <input name="quantity" type="quantity" class="quantity-text" id="quantity" 
+                      onfocus="if(this.value == '1') { this.value = ''; }" 
+                      onBlur="if(this.value == '') { this.value = '1';}"
+                      value="1">
+                  <a href="/product/cart/{{product.id}}"><input type="submit" class="button" value="Order Now!"></a>
+                </form>
+                <div class="down-content">
+                  <div class="categories">
+                    <h6>Category: <span><a href="#">All Age's</a></span></h6>
+                  </div>
+                  <div class="share">
+                    <h6>Share: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></span></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <!-- Single Page Ends Here -->
+
+</form>
+      {% endblock content %}
+
+    
