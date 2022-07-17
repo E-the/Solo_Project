@@ -127,57 +127,34 @@
         </h2>
       </div>
       <div class="row">
-        <div class="col-md-6 " data-aos="fade-right">
+        {% for item in items %}
+        
+        <div class="col-sm-6 col-xl-3" data-aos="fade-up">
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/sf1.png" alt="">
+                <img src="/{{item.watch_image}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
-                  Apple watch
+                  {{item.watch_name}}
                 </h6>
                 <h6>
                   Price:
                   <span>
-                    $300
+                    {{item.watch_price}}
                   </span>
                 </h6>
               </div>
               <div class="new">
                 <span>
-                  Featured
+                  Trending
                 </span>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3" data-aos="fade-left">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $125
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3" data-aos="fade-left">
+        <!-- <div class="col-sm-6 col-xl-3" data-aos="fade-left">
           <div class="box">
             <a href="">
               <div class="img-box">
@@ -201,107 +178,11 @@
               </div>
             </a>
           </div>
-        </div>
-        <div class="col-sm-6 col-xl-3" data-aos="fade-right">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w4.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $145
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3" data-aos="fade-right">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w5.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $195
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6  col-xl-3" data-aos="fade-left">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w6.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $170
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3" data-aos="fade-left">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $230
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
+        </div> -->
+        
+        
+        
+        {% endfor %}
       </div>
       <div class="btn-box">
         <a href="/product">

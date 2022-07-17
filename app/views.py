@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from app.models import App
 from app.forms import AppForm
+from product.models import Product
 from django.contrib.auth.decorators import login_required
+from cart.cart import Cart
 
 # Create your views here.
 
@@ -16,9 +18,9 @@ def about(request):
     return render(request,'about.html', {'nbar': 'about'})
 
 def main(request):
-    items=App.objects.all()
+    items=Product.objects.all().order_by('-id')[0:4]
     print(items)
-    return render(request,'main.html', {'nbar': 'main'})
+    return render(request,'main.html', {'items':items,'nbar': 'main'})
 
 @login_required(login_url="/user/login")
 def gallery(request):
@@ -51,6 +53,9 @@ def back(request):
     return redirect("/create")  
     # return render(request,'index.html')
 
+def checkout(request):
+    return render(request,'checkout.html')
+
 def edit(request,id):
     data=App.objects.get(id=id)
     print(id)
@@ -66,3 +71,5 @@ def update(request,id):
 #     data=App.objects.get(id=id)
 #     data.delete()
 #     return redirect("/about")
+
+

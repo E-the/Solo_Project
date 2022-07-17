@@ -21,19 +21,19 @@
                 <li class="nav-item {% if nbar == 'main' %}active{% endif %}">
                   <a class="nav-link " href="/">Home </a> 
                 </li>
-                <li class="nav-item {% if nbar == 'watches' %}active{% endif %}"">
+                <li class="nav-item {% if nbar == 'watch' %}active{% endif %}">
                   <a class="nav-link " href="/product"> Watches </a>
                 </li>
-                <li class="nav-item {% if nbar == 'about' %}active{% endif %}"">
+                <li class="nav-item {% if nbar == 'about' %}active{% endif %}">
                   <a class="nav-link" href="/about"> About </a>
                 </li>
-                <li class="nav-item {% if nbar == 'features' %}active{% endif %}"">
+                <li class="nav-item {% if nbar == 'features' %}active{% endif %}">
                   <a class="nav-link" href="/features"> Features </a>
                 </li>
                 <!-- <li class="nav-item">
                   <a class="nav-link" href="whyus.html"> Why Us </a>
                 </li> -->
-                <li class="nav-item {% if nbar == 'contact' %}active{% endif %}"">
+                <li class="nav-item {% if nbar == 'contact' %}active{% endif %}">
                   <a class="nav-link" href="/contact">Contact Us</a>
                 </li>
               </ul>
@@ -44,12 +44,12 @@
                   <span></span>
                 {% endif %}
                 <div class="dropdown">
-                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-secondary btn-sm dropdown-toggle {% if nbar == 'data' %}active{% endif %}" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-user" aria-hidden="true"></i>
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     {% if user.is_authenticated %}
-                    <a class="dropdown-item" href="/signup/data">Profile</a>
+                    <a class="dropdown-item " href="/signup/data">Profile</a>
                     {% else %}
                     <a href=""></a>
                     {% endif %}
@@ -64,8 +64,8 @@
                   
                 </a> -->
                 {% if user.is_authenticated %}
-                <a href="">
-                  <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                <a href="{% url 'cart_detail' %}">
+                  <i class="fa fa-cart-plus active" aria-hidden="true"></i>
                 </a>
                 {% else %}
                 <a href=""></a>

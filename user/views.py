@@ -16,10 +16,9 @@ def login_page(request):
         username=request.POST['username']
         ,password=request.POST['password'])
         if user is not None:
-
             login(request,user)
             messages.success(request, 'User logged in!')
-            return redirect("/signup/data")
+            return redirect("/")
             pass
 
         else:
@@ -36,17 +35,11 @@ def register_page(request):
     if request.method=="POST":
 
         User.objects.create_user(
-
             first_name=request.POST['firstname'],
-
             last_name=request.POST['lastname'],
-
             email=request.POST['email'],
-
             username=request.POST['username'],
-
             password=request.POST['password'],
-
         )
         return redirect("/user/login")
         print(request.POST)

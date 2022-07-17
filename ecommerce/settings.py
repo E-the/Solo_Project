@@ -41,9 +41,12 @@ INSTALLED_APPS = [
     'product.apps.ProductConfig',
     'signup.apps.SignupConfig',
     'module_name.apps.ModuleNameConfig',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'ordertable.apps.OrdertableConfig',
+    'cart'
 ]
 
+CART_SESSION_ID = 'cart'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -63,6 +66,9 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'cart.context_processor.tax',
+                'cart.context_processor.totalwithtax',
+                'cart.context_processor.cart_total_amount',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',

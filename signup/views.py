@@ -20,7 +20,7 @@ def signup(request,id):
 @login_required(login_url="/user/login")
 def data(request):
     items=Signup.objects.all()
-    return render(request, 'new/data.html', {'items':items})
+    return render(request, 'new/data.html', {'items':items,'nbar': 'data'})
 
 def user(request):
     # print(request.POST)

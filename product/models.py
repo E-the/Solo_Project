@@ -5,7 +5,7 @@ from django.db import models
 class Product(models.Model):
     id = models.AutoField(auto_created=True, primary_key=True)
     watch_name = models.CharField(max_length=255)
-    watch_price = models.CharField(max_length=255 ,blank = True)
+    watch_price = models.FloatField( blank=True)
     watch_detail = models.CharField(max_length=2000 ,blank = True)
     watch_stock = models.CharField(max_length=255 ,blank = True)
     watch_tec = models.CharField(max_length=255 ,blank = True)  
