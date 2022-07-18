@@ -1,0 +1,50 @@
+{%  extends 'adminbase.html' %}
+{% load static %}
+{% block title %}
+<title>Contact</title>
+
+{% endblock title %}
+{% block content %}
+{%  include 'admin/nav.html' %}
+
+<style>
+    .bk{
+        display: inline-block;
+        background-color: #dc3545;
+        color: #ffffff;
+        border-radius: 5px;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        border: 1px solid #dc3545;
+        padding: 8px 18px;
+    }
+    .bk:hover{
+        border: 1px solid #dc3545;
+        background-color: transparent;
+        -webkit-transform: translateY(-3px);
+        transform: translateY(-3px);
+        color: #dc3545;
+    }
+</style>
+<section>
+    <div class="container my-3 py-3 w-50">
+        <div class="card text-center border-0 bg-dark">
+            <div class="card-body  text-white ">
+
+                Message : <p class="card-text border-bottom pb-4 h3">{{feedback.feedback}}</p>
+                <h5>
+                    Posted by:<br>
+                    <i>{{feedback.name}}</i>
+
+                </h5>
+
+                <h6 class="card-subtitle mb-2 text-muted font-italic">{{feedback.email}}</h6>
+            </div>
+        </div>
+        <br>
+        
+        <a class="bk" href="/admin/contact">BACK</a>
+
+    </div>
+</section>
+{% endblock content %}

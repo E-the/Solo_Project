@@ -16,10 +16,19 @@ def login_page(request):
         username=request.POST['username']
         ,password=request.POST['password'])
         if user is not None:
-            login(request,user)
-            messages.success(request, 'User logged in!')
-            return redirect("/")
-            pass
+            if user.is_superuser == 0:
+                login(request,user)
+                return redirect('/')
+
+            else:
+
+                messages.error(request,"Username or Password Don't Match, Please Try Again !")
+                return redirect('/user/login')
+
+            # login(request,user)
+            # messages.success(request, 'User logged in!')
+            # return redirect("/")
+            # pass
 
         else:
             messages.error(request, 'Invalid Username or Password.')

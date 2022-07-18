@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from app.models import App
 from app.forms import AppForm
+from django.contrib import messages
+from .models import Feedback
 from product.models import Product
 from django.contrib.auth.decorators import login_required
 from cart.cart import Cart
@@ -16,6 +18,7 @@ def about(request):
     items=App.objects.all()
     print(items)
     return render(request,'about.html', {'nbar': 'about'})
+
 
 def main(request):
     items=Product.objects.all().order_by('-id')[0:4]
@@ -34,27 +37,38 @@ def footer(request):
 def features(request):
     return render(request,'features.html', {'nbar': 'features'})
 
+
 def contact(request):
-    return render(request,'contact.html', {'nbar': 'contact'})
+    if request.method == 'POST':
+        data = request.POST
+        name = data['name']
+        email = data['email']
+        feedback = data['feedback']
+        user_feedback = Feedback.objects.create(name=name,
+                                                email=email,
+                                                feedback=feedback)
+        if user_feedback:
+            messages.success(request, 'Feedback submitted. Thank You!')
+        else:
+            messages.error(request, "Error in submitting. Please try again")
+
+    context = {
+        'contact': 'active',
+    }
+    return render(request, 'contact.html', context )
+    
 
 
 
-@login_required(login_url="/user/login")
-def create(request):
-    return render(request, 'item/create.html')
 
-def save(request):
-    # print(request.POST)
-    data=AppForm(request.POST,request.FILES)
-    data.save()
-    return redirect("/about") 
+
+
 
 def back(request):
     return redirect("/create")  
     # return render(request,'index.html')
 
-def checkout(request):
-    return render(request,'checkout.html')
+
 
 def edit(request,id):
     data=App.objects.get(id=id)

@@ -1,0 +1,152 @@
+{%  extends 'adminbase.html' %}
+{% block title %}
+<title>Add Items</title>
+
+{% endblock title %}
+
+
+{% block content %}
+{%  include 'admin/nav.html' %}
+<style>
+    #display-image{
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 450px;
+        overflow: hidden;
+    }   
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo1{
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .logo1 span{
+        text-transform: capitalize;
+        font-size: 60px;
+        font-weight: 800;
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1px rgb(197, 45, 45);
+        -webkit-background-clip: text;
+        background-position: 0 0;
+        background-position: 0 0;
+    }
+
+
+    .imagesection{
+        width: 100%;
+    }
+
+    .imagesection img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    form h3{
+        text-align: center;
+    }
+
+    .main-box{
+        padding: 60px 30px;
+        margin-top: 100px;
+        box-shadow: 5px 2px 17px #181818;
+    }
+    .but {
+        font-size: 14px;
+        width: 100%;
+        padding: 10px 90px;
+        outline: transparent;
+        border: none;
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        cursor: pointer;
+        font-stretch: condensed;
+        text-transform: uppercase;
+        box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+        background-image: linear-gradient(to right, transparent 50%, #fff 50%);
+        background-size: 200%;
+        background-position: 0%;
+        transition: 350ms ease;
+    }
+
+    .but:hover {       
+        border: none;
+        color: #121212;
+        background-position: 100%;      
+    }
+
+
+</style>
+<body>
+
+<main>
+    <div class="container main-box">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 mainBox">
+                    <div class="logo1">
+                        <span>ADD NEW ITEMS</span>
+                    </div>
+                    <form action="/admin/add/" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group col-xl-6 col-lg-6 col-md-6 col-6">
+                              <input type="text" class="form-control form-control-lg" placeholder="watch_name" name="watch_name" required />
+                            </div>
+                            <div class="form-group col-xl-6 col-lg-6 col-md-6 col-6">
+                                <input type="text" class="form-control form-control-lg" placeholder="watch_price" name="watch_price" required />
+                            </div>
+                            <div class="form-group col-xl-6 col-lg-6 col-md-6 col-6">
+                                <input type="text" class="form-control form-control-lg" placeholder="watch_detail" name="watch_detail" required />
+                            </div>
+                            <div class="form-group col-xl-6 col-lg-6 col-md-6 col-6">
+                              <input type="text" class="form-control form-control-lg" placeholder="watch_stock" name="watch_stock"  required/>
+                            </div>
+                            <div class="form-group col-xl-6 col-lg-6 col-md-6 col-6">
+                                <input type="text" class="form-control form-control-lg" placeholder="watch_tec" name="watch_tec"  required/>
+                              </div>
+                            <div class="form-group col-xl-6 col-lg-6 col-md-6 col-6">
+                                <input type="text" class="form-control form-control-lg" placeholder="product_catog " name="product_catog"  required/>
+                            </div>
+                        </div>
+                        <!-- <div class=" form-group">
+                            <textarea class="form-control form-control-lg"rows="3" placeholder="Item Details" name="details"></textarea>
+                        </div> -->
+                        <div class=" form-group">
+                            <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" name="watch_image"/>
+                        </div>
+                        <div class=" form-group">
+                            <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" name="watch_image2"/>
+                        </div>
+                        <div class=" form-group">
+                            <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" name="watch_image3"/>
+                        </div>
+                        <div class="mb-4 col-xl-6">
+                            <input type="submit" value="add" class="but">
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="col-xl-5 col-lg-6 col-md-10 col-10 imagesection">
+                    <div id="display-image"></div>
+                    
+                </div> -->
+            </div>
+            <br>
+            <br>
+            
+    </div>
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock content %}
+
+

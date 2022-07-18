@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'module_name.apps.ModuleNameConfig',
     'user.apps.UserConfig',
     'ordertable.apps.OrdertableConfig',
+    
     'cart'
 ]
 

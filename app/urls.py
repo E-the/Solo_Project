@@ -8,14 +8,12 @@ urlpatterns = [
     path('gallery/',views.gallery),
     path('footer/',views.footer),
     path('features/',views.features),
-    path('checkout/',views.checkout),
     
     path('contact/',views.contact),
-    path('create',views.create),
-    path("save",views.save),
+    
+    
     path("back",views.back),
-    path("edit/<int:id>",views.edit),
-    path("update/<int:id>",views.update)
+   
     # path("delete/<int:id>",views.delete)
    
     

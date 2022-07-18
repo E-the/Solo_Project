@@ -1,0 +1,59 @@
+{%  extends 'adminbase.html' %}
+{% load static %}
+{% block title %}
+<title>Contact</title>
+
+{% endblock title %}
+{% block content %}
+    {%  include 'admin/nav.html' %}
+
+   
+
+<section>
+    <div class="container">
+        <div class="row m-0">
+            {% for user_data in all_users %}
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card bg-dark text-white user-info border-0 my-3" style="width: 20rem;">
+                    <div class="card-body">
+
+                            <div class="media p-2 pl-0">
+                                <!-- <img src="{{user_data.profile.profile_pic.url}}" class="img-fluid rounded-circle mr-3" alt="profile picture" style="width: 20%;"> -->
+                                <div class="media-body align-self-center">
+                                    <h5 class="align-middle font-weight-bold mb-1 text-capitalize">
+                                        <a href="/admin/allusers/{{user_data.username}}" class="text-decoration-none text-white">
+                                        {{user_data.first_name}} {{user_data.last_name}}
+                                        {% if user_data.is_staff %}
+                                        <span class="text-primary">*</span>
+                                        {% endif %}
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div class="btn-group dropleft">
+                                  <button class="btn btn-sm p-0 text-white" type="button" data-toggle="dropdown" id="dropdownMenuButton{{forloop.counter}}" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-h h5"></i>
+                                  </button>
+
+                                  <div class="dropdown-menu bg-secondary update-delete" aria-labelledby="dropdownMenuButton{{forloop.counter}}">
+                                    <a class="dropdown-item text-white" href="/admin/deleteUser/{{user_data.id}}"><i class="far fa-trash-alt"></i>&nbsp;Delete</a>
+                                  </div>
+                                </div>
+                            </div>
+
+                        {% if user_data.is_staff %}
+                        <a href="/admin/removeStatus/{{user_data.username}}" class="card-link text-white text-decoration-none">Remove From Admin</a>
+                        {% else %}
+                        <a href="/admin/changeStatus/{{user_data.username}}" class="card-link text-white text-decoration-none">Change To Admin</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+{% endblock content %}
