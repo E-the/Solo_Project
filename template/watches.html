@@ -7,6 +7,7 @@
 {% endblock title %}
 
 {% block content %}
+{%  include 'gallery.html' %}
 <style>
   .dropdown-item {
     display: block;
@@ -42,10 +43,9 @@
       <div class="row" >
         <div class="col-md-6 " data-aos="fade-up">
           <div class="box">
-            <a href="">
-              
+            <a href="">           
               <div class="img-box">
-                <img src="../static/images/sf1.png" alt="">
+                <img src="{% static 'images/new.png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
@@ -55,6 +55,31 @@
                   Price:
                   <span>
                     Start At $444 
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  Featured
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 " data-aos="fade-up">
+          <div class="box">
+            <a href="">           
+              <div class="img-box">
+                <img src="{% static 'images/s.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h6>
+                  Samsung Galaxy Watch
+                </h6>
+                <h6>
+                  Price:
+                  <span>
+                    Start At $666 
                   </span>
                 </h6>
               </div>
@@ -90,7 +115,7 @@
                 <h6>
                   Price:
                   <span>
-                    {{product.watch_price}}
+                    ${{product.watch_price}}
                   </span>
                 </h6>
               </div>

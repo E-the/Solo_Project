@@ -4,6 +4,8 @@
 
 {% load static %}
 {% block content %}
+
+{%  include 'gallery.html' %}
 <form action="/update/{{data.id}}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
 
@@ -43,7 +45,7 @@
             <div class="col-md-6">
               <div class="right-content">
                 <h4>{{data.watch_name}}</h4>
-                <h6>{{data.watch_price}}</h6>
+                <h6>${{data.watch_price}}</h6>
                 <span class="text-secondary text-small">Details :</span>
                 <p>{{data.watch_detail}}</p>
 

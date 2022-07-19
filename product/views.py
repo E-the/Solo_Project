@@ -106,7 +106,7 @@ def checkout(request):
             )
             order.save()
         request.session['cart']={}
-        return redirect("/")
+        return redirect("/product/order")
 
 def order(request):
     uid=request.session.get('_auth_user_id')
@@ -114,3 +114,9 @@ def order(request):
     ordertable=Ordertable.objects.filter(user=user)
 
     return render(request, "checkout.html",{'ordertable':ordertable})
+
+
+def search(request):
+    query=request.GET['query']
+    products = Product.objects.filter(productBrand__icontains=query)
+    return render(request, 'searchresults.html' ,{'products': products})

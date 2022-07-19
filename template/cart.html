@@ -9,8 +9,24 @@
 {% load cart_tag %}
 {% load static %}
 {% block content %}
-
-
+{%  include 'gallery.html' %}
+<style>
+    #remove{
+        font-size: 10px !important;
+        background-color: rgb(117, 192, 211);
+        border: 1px solid rgb(117, 192, 211);
+        color: white !important;
+        padding: 2px 8px;
+        width: 10%;
+        transition: all 250ms ease-in-out;
+    }
+    #remove:hover{
+        width: 100%;
+        color: rgb(117, 192, 211) !important;
+        background-color: transparent;
+        border: 1px solid rgb(117, 192, 211);
+    }
+</style>
 <div class="container px-4 py-5 mx-auto">
     <div class="row d-flex justify-content-center">
         <div class="col-5">
@@ -40,6 +56,7 @@
                 </div>
                 <div class="my-auto flex-column d-flex pad-left">
                     <p class="mob-text" style="text-transform: uppercase;"> {{value.name}}</p>
+                    <p class="mob-text" ><a id="remove" href="{% url 'item_clear' value.product_id %}">Remove</a></p>
                     <!-- <h6 class="mob-text">Model :</h6> -->
                 </div>
             </div>
@@ -59,7 +76,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <h6 class="mob-text">{{ value.price|multiply:value.quantity }}</h6>
+                    <h6 class="mob-text">${{ value.price|multiply:value.quantity }}</h6>
                 </div>
                 
             </div>
@@ -122,20 +139,20 @@
                     <div class="col-lg-4 mt-2">
                         <div class="row d-flex justify-content-between px-4">
                             <p class="mb-1 text-left">Subtotal</p>
-                            <h6 class="mb-1 text-right">{{cart_total_amount}}</h6>
+                            <h6 class="mb-1 text-right">${{cart_total_amount}}</h6>
                         </div>
                         <div class="row d-flex justify-content-between px-4">
                             <p class="mb-1 text-left">Tax 13%</p>
-                            <h6 class="mb-1 text-right">{{tax}}</h6>
+                            <h6 class="mb-1 text-right">${{tax}}</h6>
                         </div>
                         <div class="row d-flex justify-content-between px-4" id="tax">
                             <p class="mb-1 text-left">Total Amount</p>
-                            <h6 class="mb-1 text-right">{{totalwithtax}}</h6>
+                            <h6 class="mb-1 text-right">${{totalwithtax}}</h6>
                         </div>
                         <button class="btn-block btn-blue">
                             <span>
                                 <span id="checkout">Checkout</span>
-                                <span id="check-amt">{{totalwithtax}}</span>
+                                <span id="check-amt">${{totalwithtax}}</span>
                             </span>
                         </button>
                     </div>

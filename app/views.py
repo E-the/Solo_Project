@@ -21,9 +21,10 @@ def about(request):
 
 
 def main(request):
-    items=Product.objects.all().order_by('-id')[0:4]
+    items = Product.objects.filter(product_catog='apple').values().order_by('-id')[0:4]
+    samsung = Product.objects.filter(product_catog='samsung').values().order_by('-id')[0:4]
     print(items)
-    return render(request,'main.html', {'items':items,'nbar': 'main'})
+    return render(request,'main.html', {'items':items,'samsung':samsung, 'nbar': 'main'})
 
 @login_required(login_url="/user/login")
 def gallery(request):

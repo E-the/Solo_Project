@@ -24,7 +24,7 @@
       </a>
     </div>
     <!-- header section strats -->
-    
+    {%  include 'gallery.html' %}
     <!-- slider section -->
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
@@ -88,8 +88,7 @@
                       Smart Watches
                     </h1>
                     <p>
-                      Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
-                    </p>
+                      In this smart watch, you can make and answer calls right from your wrist! You just need to make sure the watch is connected to your phone through Bluetooth or through a mobile network. With an LTE watch model, you can even handle calls remotely.                    </p>
                     <div class="btn-box">
                       <a href="/product" class="btn1">
                         Shop Now
@@ -99,7 +98,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="{% static 'images/3.png' %}" style="height: auto;">
+                    <img src="{% static 'images/s.png' %}" style="height: auto;">
                   </div>
                 </div>
               </div>
@@ -123,7 +122,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Latest Watches
+          Top Apple Watches
         </h2>
       </div>
       <div class="row">
@@ -142,7 +141,7 @@
                 <h6>
                   Price:
                   <span>
-                    {{item.watch_price}}
+                    ${{item.watch_price}}
                   </span>
                 </h6>
               </div>
@@ -154,35 +153,53 @@
             </a>
           </div>
         </div>
-        <!-- <div class="col-sm-6 col-xl-3" data-aos="fade-left">
+      {% endfor %}
+      </div>
+      <div class="btn-box">
+        <a href="/product">
+          View All
+        </a>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Top Samsung Watches
+        </h2>
+      </div>
+      <div class="row">
+        {% for samsung in samsung %}
+        
+        <div class="col-sm-6 col-xl-3" data-aos="fade-up">
           <div class="box">
             <a href="">
               <div class="img-box">
-                <img src="images/w3.png" alt="">
+                <img src="/{{samsung.watch_image}}" alt="">
               </div>
               <div class="detail-box">
                 <h6>
-                  Smartwatch
+                  {{samsung.watch_name}}
                 </h6>
                 <h6>
                   Price:
                   <span>
-                    $110
+                    ${{samsung.watch_price}}
                   </span>
                 </h6>
               </div>
               <div class="new">
                 <span>
-                  New
+                  Hot
                 </span>
               </div>
             </a>
           </div>
-        </div> -->
-        
-        
-        
-        {% endfor %}
+        </div>
+      {% endfor %}
       </div>
       <div class="btn-box">
         <a href="/product">
@@ -191,6 +208,9 @@
       </div>
     </div>
   </section>
+
+
+  
 
   <!-- end shop section -->
 
