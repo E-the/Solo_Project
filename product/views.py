@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.shortcuts import redirect, render
 from cart.cart import Cart
-from ordertable.models import Ordertable
+from orders.models import Order
 
 # Create your views here.
 
@@ -76,27 +76,26 @@ def cart_detail(request):
 
 def checkout(request):
     if request.method=="POST":
-        phonenumber=request.POST.get('order_phonenumber')
-        email=request.POST.get('order_emailorder_email')
-        address=request.POST.get('order_address')
-        pincode=request.POST.get('order_pincode')
-        payment=request.POST.get('order_payment')
+        phonenumber=request.POST.get('phonenumber')
+        email=request.POST.get('email')
+        address=request.POST.get('address')
+        pincode=request.POST.get('pincode')
+        payment=request.POST.get('payment')
         cart=request.session.get('cart')
         uid=request.session.get('_auth_user_id')
         user=User.objects.get(pk=uid)
         
         for i in cart:
-            a=(float(cart[i]['order_price']))
-            b=cart[i]['order_quantity']
+            a=(float(cart[i]['price']))
+            b=cart[i]['quantity']
             total=a*b
             
-            ordertable=Ordertable(
+            order=Order(
                 user=user,
-                productBrand=cart[i]['product_brand'],
-                name=cart[i]['order_name'],
-                price=cart[i]['order_price'],
-                quantity=cart[i]['order_quantity'],
-                image=cart[i]['order_image'],
+                name=cart[i]['name'],
+                price=cart[i]['price'],
+                quantity=cart[i]['quantity'],
+                image=cart[i]['image'],
                 phonenumber=phonenumber,
                 email=email,
                 address=address,
@@ -106,17 +105,17 @@ def checkout(request):
             )
             order.save()
         request.session['cart']={}
-        return redirect("/product/order")
+        return redirect("/")
+        
 
 def order(request):
     uid=request.session.get('_auth_user_id')
     user=User.objects.get(pk=uid)
-    ordertable=Ordertable.objects.filter(user=user)
-
-    return render(request, "checkout.html",{'ordertable':ordertable})
+    order=Order.objects.filter(user=user)
+    return render(request, "checkout.html",{'order':order})
 
 
 def search(request):
     query=request.GET['query']
-    products = Product.objects.filter(productBrand__icontains=query)
-    return render(request, 'searchresults.html' ,{'products': products})
+    product = Product.objects.filter(watch_name__icontains=query)
+    return render(request, 'searchresults.html' ,{'product': product})

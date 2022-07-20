@@ -6,6 +6,7 @@ from app.models import *
 from user.models import *
 from product.forms import ProductForm
 from product.models import *
+from orders.models import *
 from django.contrib.auth import authenticate,login as log
 from django.contrib.auth import logout
 
@@ -48,6 +49,10 @@ def login_page(request):
     return render(request,'admin/admin_login.html' , {'nbar': 'main'})
 
 @login_required(login_url="/admin/login")
+def main(request):
+    return render(request,'admin/main.html')
+
+@login_required(login_url="/admin/login")
 def create(request):
     return render(request, 'admin/create.html' , {'nbar': 'add'})
 
@@ -60,7 +65,7 @@ def contact(request):
     return render(request, 'admin/admin_contact.html', context)
     # return render(request, 'admin/admin_contact.html' , {'nbar': 'contact'})
 
-
+@login_required(login_url="/admin/login")
 def feedback_details(request, feedback_id):
     feedback = Feedback.objects.get(id=feedback_id)
     context = {
@@ -77,7 +82,7 @@ def login_admin(request):
         if user is not None:
             if user.is_superuser == 1:
                 log(request,user)
-                return redirect('/admin/admin_home')
+                return redirect('/admin/main')
 
             else:
 
@@ -117,10 +122,18 @@ def log_out(request):
     logout(request)
     return redirect('admin/login')
 
+@login_required(login_url="/admin/login")
 def admin_home(request):
     products=Product.objects.all().order_by('-id')
     return render (request,'admin/adminhome.html',{'products': products, 'nbar': 'main'})
 
+@login_required(login_url="/admin/login")
+def order(request):
+    order=Order.objects.all()
+    return render(request, "admin/userorder.html",{'order':order})
+
+
+    
     
 
  

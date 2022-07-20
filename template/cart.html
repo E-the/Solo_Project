@@ -26,6 +26,8 @@
         background-color: transparent;
         border: 1px solid rgb(117, 192, 211);
     }
+    
+
 </style>
 <div class="container px-4 py-5 mx-auto">
     <div class="row d-flex justify-content-center">
@@ -98,40 +100,32 @@
                 <form action="/product/checkout/" method="POST">
                     {% csrf_token %}
                 <div class="row">
-                    <div class="col-lg-3 radio-group">
-                        <div class="row d-flex px-3 radio" onclick="filterSelection('fruits')">
-                            <img class="pay" src="https://e7.pngegg.com/pngimages/18/669/png-clipart-esewa-fonepay-pvt-ltd-logo-brand-cash-on-delivery-logo-text-logo.png">
-                            <p class="my-auto" >Esewa</p>
-                        </div>
-                        <div class="row d-flex px-3 radio gray" onclick="filterSelection('animals')">
-                            <img class="pay" src="https://www.pngfind.com/pngs/m/16-162996_khalti-digital-wallet-logo-healthcrowd-hd-png-download.png">
-                            <p class="my-auto">Khalti</p>
-                        </div>
-                        <div class="row d-flex px-3 radio gray mb-3">
-                            <img class="pay" src="https://banner2.cleanpng.com/20180503/dkq/kisspng-cash-on-delivery-payment-credit-card-service-money-5aeae67fa51942.8306621815253438716763.jpg">
-                            <p class="my-auto">Cash On Deliver</p>
-                        </div>
+                    <div class="cc-selector col-lg-2 ">
+                        <input checked="checked" id="esewa" type="radio" name="payment" value="esewa" />
+                        <label class="drinkcard-cc esewa" for="esewa"></label>
+                        <input id="khalti" type="radio" name="payment" value="visacard" />
+                        <label class="drinkcard-cc khalti"for="khalti"></label>
                     </div>
                     <div class="col-lg-5">
                         <div class="row px-2 fruits">
                             <div class="form-group col-md-6 ">
                                 <label class="form-control-label">Phone Number</label>
-                                <input type="text" id="cname" name="order_phonenumber" placeholder="Name">
+                                <input type="text" id="cname" name="phonenumber" placeholder="Name">
                             </div>
                             <div class="form-group col-md-6 animals">
                                 <label class="form-control-label">E-mail</label>
-                                <input type="text" id="cnum" name="order_email" placeholder="000 000 0000" minlength="9"
+                                <input type="text" id="cnum" name="email" placeholder="000 000 0000" minlength="9"
                                 maxlength="20" size="20">
                             </div>
                         </div>
                         <div class="row px-2">
                             <div class="form-group col-md-6">
                                 <label class="form-control-label">Shipping Address</label>
-                                <input type="text" id="exp" name="order_address" placeholder="Place.....">
+                                <input type="text" id="exp" name="address" placeholder="Place.....">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="form-control-label">PIN</label>
-                                <input type="password"  id="cvv" name="order_pincode" placeholder="****" minlength="4"
+                                <input type="password"  id="cvv" name="pincode" placeholder="****" minlength="4"
                                 maxlength="4" size="4" type="*">
                             </div>
                         </div>

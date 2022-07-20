@@ -1,7 +1,7 @@
 {%  extends 'adminbase.html' %}
 {% load static %}
 {% block title %}
-<title>Home</title>
+<title>ITEMS</title>
 
 {% endblock title %}
 {% block css %}
@@ -18,7 +18,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h1>
-          ADMINISTRATION ZONE
+          <img style="height: 30px; margin-top: -7px;" src="../../static/images/admin.png" alt="">ADMINISTRATION ZONE
         </h1>
         <br>
         <br>
@@ -93,7 +93,7 @@
       
     </div>
   </section>
-
+  {% include 'top.html' %}
   {% include 'footer.html' %}
 
   {% endblock content %}

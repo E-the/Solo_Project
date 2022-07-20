@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="/static/images/a.png" style="height: auto;">
+                    <img src="{% static 'images/a.png' %}" style="height: auto;">
                   </div>
                 </div>
               </div>
@@ -128,7 +128,7 @@
       <div class="row">
         {% for item in items %}
         
-        <div class="col-sm-6 col-xl-3" data-aos="fade-up">
+        <div class="col-sm-6 col-xl-3" data-aos="fade-up" data-aos-duration="500">
           <div class="box">
             <a href="">
               <div class="img-box">
@@ -344,7 +344,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="features.html">
+        <a href="/features">
           View More
         </a>
       </div>

@@ -87,4 +87,3 @@ def update(request,id):
 #     data.delete()
 #     return redirect("/about")
 
-

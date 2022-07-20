@@ -41,9 +41,8 @@ INSTALLED_APPS = [
     'product.apps.ProductConfig',
     'signup.apps.SignupConfig',
     'module_name.apps.ModuleNameConfig',
-    'user.apps.UserConfig',
-    'ordertable.apps.OrdertableConfig',
-    
+    'user.apps.UserConfig',  
+    'orders.apps.OrdersConfig',  
     'cart'
 ]
 

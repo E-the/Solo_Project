@@ -9,11 +9,13 @@ urlpatterns = [
     
     # path('message/',views.message),
     path('login/',views.login_page),
+    path('main/',views.main),
 
     path('allusers/', views.user_display),
     path('deleteUser/<int:user_id>', views.delete_user),
     path('changeStatus/<str:username>/', views.change_to_admin),
     path('removeStatus/<str:username>/', views.remove_from_admin),
+    path('order',views.order, name="order"),
 
     path('loginadmin/',views.login_admin),
     path('create/',views.create),    
