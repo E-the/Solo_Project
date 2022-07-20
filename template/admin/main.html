@@ -1,0 +1,24 @@
+{%  extends 'adminbase.html' %}
+{% load static %}
+{% block title %}
+<title>ADMIN DRASHBOARD</title>
+
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+{% endblock css %}
+{% block content %}
+    
+
+
+<section class="hero-area overlay" style="background-image: url('../../static/images/main.jpg');">
+    <div class="block">
+        <h1 style="text-transform: uppercase; font-size: 3.6rem;">Welcome To Admin DASHBOARD</h1>
+        <p style="text-transform: capitalize;">Move toward administration area</p>
+        <a href="/admin/admin_home" class="btn btn-transparent smooth-scroll">Explore More &nbsp;<i class="fa fa-arrow-right"></i></a>
+    </div>
+</section>
+
+{% endblock content %}
