@@ -119,3 +119,4 @@ def search(request):
     query=request.GET['query']
     product = Product.objects.filter(watch_name__icontains=query)
     return render(request, 'searchresults.html' ,{'product': product})
+    

@@ -212,7 +212,7 @@ button:focus {
 }
 
 .esewa{background-image:url(../../static/images/e.png);}
-.khalti{background-image:url(../../static/images/visa.png);}
+.khalti{background-image:url(../../static/images/mater.png);}
 
 .cc-selector-2 input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
 .cc-selector-2 input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
