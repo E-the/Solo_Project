@@ -1,0 +1,95 @@
+{%  extends 'adminbase.html' %}
+{% load static %}
+{% block title %}
+<title>USER ORDER</title>
+
+{% endblock title %}
+{% block content %}
+    {%  include 'admin/nav.html' %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}" type="text/css" />
+{% endblock %}
+
+<style>
+    #pay{
+        
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+<div class="col-lg-9  m-auto text-center">
+    <h1 class="brand mt-3">ORDERS</h1>
+</div>   
+<div class="container px-4 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-4">
+            <h4 class="heading">Products</h4>
+        </div>
+        
+        <div class="col-8">
+            <div class="row text-right">
+                <div class="col-3">
+                    <h6 class="mt-2">User</h6>
+                </div>
+                <div class="col-3">
+                    <h6 class="mt-2">Quantity</h6>
+                </div>
+                <div class="col-2">
+                    <h6 class="mt-2">Price</h6>
+                </div>
+                <div class="col-2">
+                    <h6 class="mt-2">Total</h6>
+                </div>
+                <div class="col-2">
+                    <h6 class="mt-2">Date</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for order in order %}
+    <div class="row d-flex justify-content-center border-top">
+        <div class="col-4">
+            <div class="row d-flex">
+                <div class="book">
+                    <img src="{{order.image}} " class="book-img">
+                </div>
+                <div class="my-auto flex-column d-flex pad-left">
+                    <h5 class="mob-text">{{order.productBrand}}</h5>
+                    <h6 class="mob-text"> {{order.name}}</h6>
+                    <p id="pay"> paid by: {{order.payment}}</p>
+                    <p class="mob-text"><a href="">Remove</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="my-auto col-8">
+            <div class="row text-right">
+                <div class="col-3">
+                    <h6 class="mob-text"  style="text-transform: uppercase;">{{order.user}}</h6>
+                </div>
+                <div class="col-3">
+                    <h6 class="mob-text">{{order.quantity}}</h6>
+                </div>
+                <div class="col-2">
+                    <h6 class="mob-text">${{order.price}}</h6>
+                </div>
+                <div class="col-2">
+                    <h6 class="mob-text">${{order.total}} </h6>
+                </div>
+                <div class="col-2">
+                    <h6 class="mob-text">{{order.date}} </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endfor %}
+</div>
+    <a href="{% url 'cart_clear' %}">Clear Cart</a>
+    
+    
+
+
+{% block scripts %}
+    <script src="{% static '/javascript/cart.js' %}"></script>
+    {% endblock  %}
+{% endblock content %}
