@@ -42,9 +42,9 @@
                 <div class="col-2">
                     <img style="height: 150px;" src="{{order.image}}" alt="" srcset="">
                 </div>
-                <div class="col-2">
+                <!-- <div class="col-2">
                     <span id="brand">{{order.productBrand}}</span>  
-                </div>
+                </div> -->
                 <div class="col-2">
                     <span id="name"> {{order.name}} </span>  
                 </div>
@@ -52,7 +52,7 @@
                     <span id="quantity">{{order.quantity}}</span>
                 </div>
                 <div class="col-2">
-                    <span id="price">&pound;{{order.total}}</span>
+                    <span id="price">${{order.total}}</span>
                 </div>
                 <div class="col-2">
                     <span id="date">{{order.date}}</span>
@@ -65,10 +65,10 @@
             <br>
             <div class="row d-flex justify-content-center">
                 <div class="col-3">
-                    <span id="name">Shipping</span>
+                    <span id="name">Shipping Charge</span>
                 </div>
                 <div class="col-7 text-right">
-                    <span id="price">&pound;33.00</span>
+                    <span id="price">FREE</span>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
         <div class="footer">
             <div class="row">
                 <div class="col-2 text-center"><img class="img-fluid" src="{% static 'images/icon.png' %}"></div>
-                <div class="col-10 text-center">Want any help? Please &nbsp;<a> contact us</a></div>
+                <div class="col-10 text-center">Want any help? Please &nbsp;<a href="/contact"> contact us</a></div>
             </div>
             
            
