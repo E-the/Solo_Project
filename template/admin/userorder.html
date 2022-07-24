@@ -35,7 +35,7 @@
                     <h6 class="mt-2">Quantity</h6>
                 </div>
                 <div class="col-2">
-                    <h6 class="mt-2">Price</h6>
+                    <h6 class="mt-2">Address</h6>
                 </div>
                 <div class="col-2">
                     <h6 class="mt-2">Total</h6>
@@ -56,7 +56,8 @@
                 <div class="my-auto flex-column d-flex pad-left">
                     <h5 class="mob-text">{{order.productBrand}}</h5>
                     <h6 class="mob-text"> {{order.name}}</h6>
-                    <p id="pay"> paid by: {{order.payment}}</p>
+                    <h6 class="mob-text" style="font-size: 0.5rem;">Number:{{order.phonenumber}}</h6>
+                    <p id="pay"> paid by: {{order.payment}}</p>               
                     <p class="mob-text"><a href="">Remove</a></p>
                 </div>
             </div>
@@ -70,7 +71,7 @@
                     <h6 class="mob-text">{{order.quantity}}</h6>
                 </div>
                 <div class="col-2">
-                    <h6 class="mob-text">${{order.price}}</h6>
+                    <h6 class="mob-text">{{order.address}}</h6>
                 </div>
                 <div class="col-2">
                     <h6 class="mob-text">${{order.total}} </h6>
