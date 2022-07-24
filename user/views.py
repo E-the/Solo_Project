@@ -32,7 +32,7 @@ def login_page(request):
 
         else:
             messages.error(request, 'Invalid Username or Password.')
-            return redirect("/user/login")
+            return redirect("/error")
 
     else:
         return render(request,"user/login.html")
