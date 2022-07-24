@@ -4,7 +4,7 @@
 .card{
     margin: auto;
     width: 50%;
-    max-width:900px;
+    width:1100px;
     padding: 4vh 0;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-top: 3px solid rgb(212, 52, 92);
