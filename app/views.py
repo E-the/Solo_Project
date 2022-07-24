@@ -13,6 +13,9 @@ from cart.cart import Cart
 def index(request):
     return render(request,'index.html')
 
+def error(request):
+    return render(request,'404.html')
+
 
 def about(request):
     items=App.objects.all()
