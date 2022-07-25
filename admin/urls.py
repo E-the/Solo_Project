@@ -20,11 +20,12 @@ urlpatterns = [
     path('loginadmin/',views.login_admin),
     path('create/',views.create),    
     path('admin_home/',views.admin_home),
-    path('add/',views.add),
+    path('add/',views.add, name="add"),
 
     path('edit/<int:id>/', views.edit ,name="edit"),
-    path('updatepage/<int:id>', views.updatepage),
-    path('delete/<int:id>',views.delete),
+    path('updatepage/<int:id>', views.updatepage, name="updatepage"),
+    path('delete/<int:id>',views.delete, name="delete"),
+    path('delete_order/<int:id>',views.delete_order),
 
 
     path('contact/',views.contact),
