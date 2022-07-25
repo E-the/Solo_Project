@@ -1,5 +1,4 @@
 {% extends 'index.html' %}
-{% block title %} Search Results {% endblock %}
 {% block content %}
 {% load static %}
 {%  include 'gallery.html' %}
@@ -22,51 +21,46 @@
 
 </style>
 <section id="pcard" class="col-mt-5">
-    <div class="col-lg-6 m-auto head">
-        <h1 >Search Results</h1>
-    </div>
-    {% if products|length < 1 %}
-    <div class="d-flex align-items-center justify-content-center vh-70">
-      <div class="text-center mb-5">
-          <h1 class="display-1 fw-bold">404</h1>
-          <p class="fs-3"> <span class="text-danger">Opps!</span> Search not found.</p>
-          <p class="lead">
-              The page you’re looking for doesn’t exist.
-            </p>
-          <a href="/" class="btn gohome">Go Home</a>
-      </div>
+  <div class="col-lg-6 pl-5 pt-4 m-auto head">
+      <h1 style="font-size: 28px;">Search Results</h1>
   </div>
-  {% endif %}
-    <div class="container ">
-      <div class="row">
+  {% if products|length < 1 %}
+  <div class="d-flex align-items-center justify-content-center vh-70">
+    <div class="text-center mb-5">
+        <h1 class="display-1 fw-bold">404</h1>
+        <p class="fs-3"> <span class="text-danger">Opps!</span> Search not found.</p>
+        <p class="lead">
+            The page you’re looking for doesn’t exist.
+          </p>
+        <a href="/" class="btn gohome">Go Home</a>
+    </div>
+</div>
+{% endif %}
+  <div class="container ">
+    <div class="row">
 
-        {% for product in products %}
-          <div class="col-xl-3 col-lg-4 col-md-6 position-relative ">
-            
-
-              <div class="card product-item">
-                <i class="fa fa-heart position-absolute liked"></i>
-                <i class="fa fa-heart-o position-absolute like"></i>
-                <div class="images">
-                <a href="product/phone/productdetails/{{product.id}}"><img src="/{{product.image}}" class="img-fluid w-300 img-card" alt="..." data-bs-toggle="tooltip" data-bs-placement="top" title="Click to See Product Details"></a>
-                </div>
-                <div class="card-body">
-                  <h6 class="card-subtitle mb-2 text-muted  fw-light">{{product.productBrand}}</h6>
-                  <h5 class="card-title">{{product.name}}</h5>
-                  <p class="card-text price"> ${{product.price}} <span class="float-end rating-stars" >
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                      <i class="fa fa-star"></i>
-                  </span> </p>
-                  <div class="text-center">
-                    <a href="{% url 'cart_add' product.id %}" class="btn btn-dark w-100" role="button" > Add To Cart</a>
-                </div>
+      {% for product in products %}
+        <div class="col-xl-3 col-lg-4 col-md-6 position-relative ">
+            <div class="card product-item">
+              <i class="fa fa-heart position-absolute liked"></i>
+              <i class="fa fa-heart-o position-absolute like"></i>
+              <div class="images">
+                <a href="/product/product/{{product.id}}"><img style="height: 200px;" src="/{{product.watch_image}}" class="img-fluid w-300 img-card" alt="..." data-bs-toggle="tooltip" data-bs-placement="top" title="Click to See Product Details"></a>
+              </div>
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted  fw-light">{{product.productBrand}}</h6>
+                <h5 class="card-title" style="font-size: 12px;">{{product.watch_name}}</h5>
+                <p class="card-text price"> ${{product.watch_price}} <span class="float-end rating-stars" >
+                    
+                </span> </p>
+                <div class="text-center">
+                  <a href="{% url 'cart_add' product.id %}" class="btn btn-dark w-100" role="button" > Add To Cart</a>
                 </div>
               </div>
-          </div>
-        {%endfor%}
-      </div>
+            </div>
+        </div>
+      {%endfor%}
+    </div>
 </div>
 </section>
 {% endblock %}
