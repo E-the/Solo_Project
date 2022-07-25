@@ -1,7 +1,7 @@
 # Samaya.com - dark-light themed ecommerce website
 #### This is a responsive online shop with simple animations.
 
-### :rocket: [DEMO](https://blackcrownwatches.netlify.com/)
+### :rocket: [PROJECT](https://blackcrownwatches.netlify.com/)
 
 # What I learned
 
