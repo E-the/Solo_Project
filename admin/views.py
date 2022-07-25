@@ -126,6 +126,11 @@ def log_out(request):
 def admin_home(request):
     products=Product.objects.all().order_by('-id')
     return render (request,'admin/adminhome.html',{'products': products, 'nbar': 'main'})
+    
+def delete_order(request,id):
+    data=Order.objects.get(id=id)
+    data.delete()
+    return redirect("/admin/order")
 
 @login_required(login_url="/admin/login")
 def order(request):
