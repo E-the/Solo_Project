@@ -118,5 +118,6 @@ def order(request):
 def search(request):
     query=request.GET['query']
     product = Product.objects.filter(watch_name__icontains=query)
-    return render(request, 'searchresults.html' ,{'product': product})
+    product = Product.objects.filter(product_catog__icontains=query)
+    return render(request, 'searchresults.html' ,{'products': product})
     
