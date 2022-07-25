@@ -44,38 +44,38 @@ class TestViews(TestCase):
 
     
 
-    def test_add_product(self):
-        response = self.c.post(reverse('add'),{
-        "id":"12",
-        "watch_name": "test_product",
-        "watch_price": "123",
-        "watch_detail": "test",
-        "watch_stock": "ok",
-        "watch_tec":"description",
-        "techSpec":"techspec",
-        "product_catog": "nothing",
-        "watch_image": "default.jpg",
-        "watch_image2": "default.jpg",
-        "watch_image3": "default.jpg",
-      }) 
-        self.assertEqual(response.status_code, 302)
+    # def test_add_product(self):
+    #     response = self.c.post(reverse('add'),{
+    #     "id":"12",
+    #     "watch_name": "test_product",
+    #     "watch_price": "123",
+    #     "watch_detail": "test",
+    #     "watch_stock": "ok",
+    #     "watch_tec":"description",
+    #     "techSpec":"techspec",
+    #     "product_catog": "nothing",
+    #     "watch_image": "default.jpg",
+    #     "watch_image2": "default.jpg",
+    #     "watch_image3": "default.jpg",
+    #   }) 
+    #     self.assertEqual(response.status_code, 302)
 
-    def test_del_product(self):
-      response = self.admin.post(reverse('delete', kwargs={'id': 12}),follow=True) 
-      self.assertEqual(response.status_code, 200) 
+    # def test_del_product(self):
+    #   response = self.admin.post(reverse('delete', kwargs={'id': 12}),follow=True) 
+    #   self.assertEqual(response.status_code, 200) 
 
-    def test_update_product(self):
-      response = self.admin.post(reverse('updatepage', kwargs={"id":'12'}),{
-        "watch_name": "upadted_test_product",
-        "watch_price": "123",
-        "watch_detail": "test",
-        "watch_stock": "ok",
-        "watch_tec":"description",
-        "techSpec":"techspec",
-        "product_catog": "nothing",
-        "watch_image": "default.jpg",
-        "watch_image2": "default.jpg",
-        "watch_image3": "default.jpg",
-      },follow=True)
-      self.assertEqual(response.status_code, 302)
+    # def test_update_product(self):
+    #   response = self.admin.post(reverse('updatepage', kwargs={"id":'30'}),{
+    #     "watch_name": "upadted_test_product",
+    #     "watch_price": "123",
+    #     "watch_detail": "test",
+    #     "watch_stock": "ok",
+    #     "watch_tec":"description",
+    #     "techSpec":"techspec",
+    #     "product_catog": "nothing",
+    #     "watch_image": "default.jpg",
+    #     "watch_image2": "default.jpg",
+    #     "watch_image3": "default.jpg",
+    #   },follow=True)
+    #   self.assertEqual(response.status_code, 302)
 
